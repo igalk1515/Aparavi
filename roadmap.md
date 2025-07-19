@@ -75,10 +75,3 @@ Perfect — here's a clear **ETL-to-RAG roadmap** for implementing your full Hyb
 | Knowledge Graph    | Bonus points for entity-aware RAG |
 | OCR page rendering | More accurate OCR from images     |
 | LangChain tools    | Could simplify LangGraph flows    |
-
----
-
-Would you like me to:
-
-- Start with language detection?
-- Or design the metadata system for chunks?
