@@ -18,13 +18,13 @@ def embed_text(text: str) -> list[float]:
     )
     return response.data[0].embedding
 
-def search_vector(query: str, top_k: int = 5) -> list[ContentChunk]:
+def search_vector(query: str, k: int = 5) -> list[ContentChunk]:
     query_vec = embed_text(query)
-    
+
     hits = client.search(
         collection_name=QDRANT_COLLECTION,
         query_vector=query_vec,
-        limit=top_k
+        limit=k
     )
 
     chunks = []
