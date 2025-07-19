@@ -36,17 +36,18 @@ def store_chunks(chunks: list[ContentChunk]):
     points = []
     for chunk in chunks:
         embedding = embed_text(chunk.content)
-        point_id = str(uuid.uuid5(uuid.NAMESPACE_DNS, chunk.chunk_id))  # stable, UUID format
+        point_id = str(uuid.uuid5(uuid.NAMESPACE_DNS, chunk.chunk_id))
 
         points.append(PointStruct(
             id=point_id,
             vector=embedding,
             payload={
+                "chunk_id": chunk.chunk_id,
                 "doc_id": chunk.doc_id,
                 "page_num": chunk.page_num,
                 "language": chunk.language,
                 "content": chunk.content,
-                "metadata": chunk.metadata,
+                "metadata": chunk.metadata or {},
             }
         ))
 
