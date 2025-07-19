@@ -1,0 +1,11 @@
+# This file ensures the data directory structure is preserved in git
+
+# You can place your documents and data files in the appropriate folders:
+
+#
+
+# - raw/: Original PDF files and documents
+
+# - processed/: Extracted text, OCR results, and chunked documents
+
+# - embeddings/: Cached embeddings (if not using Qdrant directly)
