@@ -5,7 +5,7 @@ FROM python:3.10-slim
 WORKDIR /app
 
 # Install system deps for camelot + PyMuPDF
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y sqlite3 \
     poppler-utils \
     ghostscript \
     libglib2.0-0 \

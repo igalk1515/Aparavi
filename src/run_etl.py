@@ -5,6 +5,7 @@ from transform.text_chunker import chunk_text
 from transform.language_detector import detect_language
 from models.data_models import ContentChunk
 from ingest.table_extractor import extract_tables
+from store.sql_store import store_table_rows
 
 import uuid
 import os
@@ -27,9 +28,13 @@ def run_etl():
         
         ocr_pages = extractor.ocr_pages
         tables = extract_tables(path)
-
         # Filter out OCR pages
         filtered_tables = [t for t in tables if t["page_num"] not in ocr_pages]
+        # Add metadata
+        for t in filtered_tables:
+            t["doc_id"] = metadata.doc_id
+        store_table_rows(filtered_tables)
+
 
         if filtered_tables:
             print(f"\n📊 Extracted {len(filtered_tables)} table rows from {metadata.filename}")
