@@ -1,3 +1,4 @@
+# src/ingest/pdf_extractor.py
 from models.data_models import DocumentMetadata
 import fitz
 import os
@@ -9,6 +10,9 @@ class PageText:
         self.content = content
 
 class PDFTextExtractor:
+    def __init__(self):
+        self.ocr_pages = []
+
     def extract_text(self, file_path):
         doc = fitz.open(file_path)
         pages = []
@@ -27,9 +31,9 @@ class PDFTextExtractor:
 
             if self._needs_ocr(text):
                 print(f"⚠️ Page {i + 1} likely needs OCR")
-                # TODO: Implement OCR processing
                 pix = page.get_pixmap(dpi=300)
                 text = run_ocr_with_google(pix)
+                self.ocr_pages.append(i + 1)
 
             if text.strip():
                 pages.append(PageText(page_num=i + 1, content=text))

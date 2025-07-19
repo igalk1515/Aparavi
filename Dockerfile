@@ -7,8 +7,10 @@ WORKDIR /app
 # Install system deps for camelot + PyMuPDF
 RUN apt-get update && apt-get install -y \
     poppler-utils \
+    ghostscript \
     libglib2.0-0 \
     libsm6 \
+    libgl1  \
     libxext6 \
     libxrender-dev \
     && rm -rf /var/lib/apt/lists/*
