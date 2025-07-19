@@ -31,12 +31,12 @@ Perfect — here's a clear **ETL-to-RAG roadmap** for implementing your full Hyb
 
 ### 🧠 PHASE 3: Retrieval & Generation (RAG)
 
-| Step | Component             | File                    | Status     | Purpose                                      |
-| ---- | --------------------- | ----------------------- | ---------- | -------------------------------------------- |
-| 10   | Vector Retrieval      | `vector_retriever.py`   | ✅ Done    | Fetch top-k chunks from Qdrant               |
-| 11   | SQL Table Retrieval   | `sql_retriever.py`      | ✅ Done    | Fetch relevant rows from structured data     |
-| 12   | Hybrid Retriever      | `hybrid_retriever.py`   | ✅ Done    | Combine vector + SQL retrieval               |
-| 13   | GPT Answer Generation | `response_generator.py` | 🔜 Planned | Generate final response with source citation |
+| Step | Component             | File                    | Status  | Purpose                                      |
+| ---- | --------------------- | ----------------------- | ------- | -------------------------------------------- |
+| 10   | Vector Retrieval      | `vector_retriever.py`   | ✅ Done | Fetch top-k chunks from Qdrant               |
+| 11   | SQL Table Retrieval   | `sql_retriever.py`      | ✅ Done | Fetch relevant rows from structured data     |
+| 12   | Hybrid Retriever      | `hybrid_retriever.py`   | ✅ Done | Combine vector + SQL retrieval               |
+| 13   | GPT Answer Generation | `response_generator.py` | ✅ Done | Generate final response with source citation |
 
 ---
 
@@ -51,10 +51,10 @@ Perfect — here's a clear **ETL-to-RAG roadmap** for implementing your full Hyb
 
 ### 📊 PHASE 5: Evaluation
 
-| Step | Component                 | File                    | Status   | Purpose                                   |
-| ---- | ------------------------- | ----------------------- | -------- | ----------------------------------------- |
-| 16   | Arize Phoenix Integration | `phoenix_evaluator.py`  | 🔜 Final | Trace and evaluate answers                |
-| 17   | Compute F1 / Precision    | `metrics_calculator.py` | 🔜 Final | Reach ≥0.85 F1 score from challenge sheet |
+| Step | Component                 | File                    | Status  | Purpose                                   |
+| ---- | ------------------------- | ----------------------- | ------- | ----------------------------------------- |
+| 16   | Arize Phoenix Integration | `phoenix_evaluator.py`  | ✅ Done | Trace and evaluate answers                |
+| 17   | Compute F1 / Precision    | `metrics_calculator.py` | ✅ Done | Reach ≥0.85 F1 score from challenge sheet |
 
 ---
 
