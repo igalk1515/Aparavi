@@ -24,7 +24,7 @@ This project implements a **Retrieval-Augmented Generation (RAG)** pipeline capa
        └────┬───────┘
             │
      ┌──────▼──────┐
-     │ OCR Agent   │──Google Vision / Tesseract
+     │ OCR Agent   │──Google Vision
      └────┬───────┘
           │
  ┌────────▼────────┐
