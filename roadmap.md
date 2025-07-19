@@ -45,7 +45,7 @@ Perfect — here's a clear **ETL-to-RAG roadmap** for implementing your full Hyb
 | Step | Component             | File           | Status  | Purpose                                          |
 | ---- | --------------------- | -------------- | ------- | ------------------------------------------------ |
 | 14   | ETL Agent (LangGraph) | `etl_graph.py` | ✅ Done | Automate ingest → OCR → chunk → store            |
-| 15   | RAG Agent (LangGraph) | `rag_graph.py` | 🔜 Soon | Automate retrieval → generation → source linking |
+| 15   | RAG Agent (LangGraph) | `rag_graph.py` | ✅ Done | Automate retrieval → generation → source linking |
 
 ---
 
