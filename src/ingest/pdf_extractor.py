@@ -1,6 +1,7 @@
 from models.data_models import DocumentMetadata
 import fitz
 import os
+from ingest.ocr_processor import run_ocr_with_google
 
 class PageText:
     def __init__(self, page_num, content):
@@ -27,7 +28,8 @@ class PDFTextExtractor:
             if self._needs_ocr(text):
                 print(f"⚠️ Page {i + 1} likely needs OCR")
                 # TODO: Implement OCR processing
-                continue
+                pix = page.get_pixmap(dpi=300)
+                text = run_ocr_with_google(pix)
 
             if text.strip():
                 pages.append(PageText(page_num=i + 1, content=text))

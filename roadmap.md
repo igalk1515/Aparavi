@@ -12,7 +12,7 @@ Perfect — here's a clear **ETL-to-RAG roadmap** for implementing your full Hyb
 | ---- | ----------------------- | ------------------------------------ | ------- | --------------------------------------- |
 | 1    | PyMuPDF Text Extraction | `pdf_extractor.py`                   | ✅ Done | Extract machine-readable text per page  |
 | 2    | Detect unreadable pages | `_needs_ocr()` in `pdf_extractor.py` | ✅ Done | Decide if page needs OCR                |
-| 3    | OCR Placeholder (stub)  | `TODO` inside extractor              | 🟡 Stub | Plan for Google Vision OCR integration  |
+| 3    | OCR Placeholder (stub)  | `TODO` inside extractor              | ✅ Done | Plan for Google Vision OCR integration  |
 | 4    | Chunking                | `text_chunker.py`                    | ✅ Done | Split text into embedding-ready chunks  |
 | 5    | Language Detection      | `language_detector.py`               | ✅ Done | Tag each chunk as "en" or "de"          |
 | 6    | Metadata + Chunk IDs    | `metadata.py` or inside extractor    | ✅ Done | Add doc ID, page number, chunk ID, etc. |
