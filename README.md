@@ -56,8 +56,7 @@ This project implements a **Retrieval-Augmented Generation (RAG)** pipeline capa
 | Component           | Tool / Lib                      |
 | ------------------- | ------------------------------- |
 | PDF Parsing         | PyMuPDF                         |
-| OCR (fallback)      | Tesseract OCR                   |
-| OCR (commercial)    | Google Vision API               |
+| OCR                 | Google Vision API               |
 | Table Extraction    | Camelot                         |
 | Vector Store        | Qdrant                          |
 | SQL Store           | SQLite                          |
@@ -88,15 +87,9 @@ docker-compose run app python src/test/test_etl_graph.py
 docker-compose run app python src/test/test_rag_graph_run.py
 ```
 
-### 4. 🧪 Evaluation (Optional)
-
-```bash
-docker-compose run app python src/eval/evaluate_rag.py
-```
-
 ---
 
-## 🤖 OCR Decision Logic
+## OCR Decision Logic
 
 The **OCR agent** runs only on pages with no extractable text:
 
@@ -120,7 +113,7 @@ The results are merged and passed to GPT-4o, ensuring both fuzzy and symbolic ma
 
 ## 🧾 Example Output
 
-> **Question**: What is the invoice total?  
+> **Question**: What is the invoice total?
 > **Answer**: The total is 101,63 EUR. _(doc: 72682299427_pdf, page: 1)_
 
 ---
