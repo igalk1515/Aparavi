@@ -6,6 +6,7 @@ from transform.language_detector import detect_language
 from models.data_models import ContentChunk
 from ingest.table_extractor import extract_tables
 from store.sql_store import store_table_rows
+from store.vector_store import store_chunks
 
 import uuid
 import os
@@ -68,6 +69,8 @@ def run_etl():
                 print(f"\n🔹 Chunk {i+1} (Page {page.page_num}, lang={lang})")
                 print(chunk[:400])
                 all_chunks.append(chunk_obj)
+
+            store_chunks(all_chunks)
 
         print(f"\n✅ Total chunks created for {metadata.filename}: {len(all_chunks)}")
 

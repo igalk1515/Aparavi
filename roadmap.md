@@ -21,11 +21,11 @@ Perfect — here's a clear **ETL-to-RAG roadmap** for implementing your full Hyb
 
 ### 🏗 PHASE 2: Transformation & Storage
 
-| Step | Component                  | File                 | Status     | Purpose                                       |
-| ---- | -------------------------- | -------------------- | ---------- | --------------------------------------------- |
-| 7    | Store Chunks in Qdrant     | `vector_store.py`    | 🔜 Planned | Push chunks with embeddings                   |
-| 8    | Store Table Rows in SQLite | `sql_store.py`       | 🔜 Planned | Save extracted tables from invoices, etc.     |
-| 9    | Table Extraction (Camelot) | `table_extractor.py` | 🔜 Planned | Extract structured rows from PDFs with tables |
+| Step | Component                  | File                 | Status  | Purpose                                       |
+| ---- | -------------------------- | -------------------- | ------- | --------------------------------------------- |
+| 7    | Store Chunks in Qdrant     | `vector_store.py`    | ✅ Done | Push chunks with embeddings                   |
+| 8    | Store Table Rows in SQLite | `sql_store.py`       | ✅ Done | Save extracted tables from invoices, etc.     |
+| 9    | Table Extraction (Camelot) | `table_extractor.py` | ✅ Done | Extract structured rows from PDFs with tables |
 
 ---
 

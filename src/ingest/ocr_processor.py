@@ -1,8 +1,4 @@
 # src/ingest/ocr_processor.py
-"""
-OCR processor for extracting text from PDF pages using Google Vision API and an API key.
-"""
-
 import os
 import io
 import base64

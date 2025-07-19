@@ -12,7 +12,7 @@ services:
     command: python src/run_etl.py
 
   qdrant:
-    image: qdrant/qdrant
+    image: qdrant/qdrant:v1.3.0
     ports:
       - '6333:6333'
     volumes:
