@@ -5,11 +5,9 @@ import os
 
 RAW_DIR = "data/raw"
 PDF_FILES = [
-    "20220714449_invoice_70449.pdf",
-    "72682299427.pdf",
-    "Energieausweis Allach (1).pdf",
-    "Energieausweis Augsburg Karwendelstr. 167 germen.pdf",
-    "license powerpoint ersatz_OCR 1.pdf"
+    "Invoice-ECAD58FD-0001.pdf",
+    "Aufgabenbeschrieb_DOORS-KI_V5 (1) 1 1.pdf",
+    "20220714449_invoice_70449.pdf"
 ]
 
 if __name__ == "__main__":

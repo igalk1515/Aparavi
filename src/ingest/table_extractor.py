@@ -9,7 +9,6 @@ def extract_tables(file_path: str, pages: str = "all") -> list[dict]:
     """
     try:
         tables = camelot.read_pdf(file_path, pages=pages, flavor="stream", strip_text="\n")
-        print(f"📤 Camelot (stream) found {len(tables)} tables in {file_path}")
     except Exception as e:
         print(f"⚠️ Camelot error on file {file_path}: {e}")
         return []

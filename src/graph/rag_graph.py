@@ -15,7 +15,6 @@ class RAGState(TypedDict):
 
 def detect_query_language(state: RAGState) -> RAGState:
     lang = detect_language(state["query"])
-    print(f"🌐 Detected language: {lang}")
     state["language"] = lang
     return state
 

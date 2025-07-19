@@ -15,7 +15,7 @@ def generate_answer(query: str, chunks: list[ContentChunk]) -> str:
     prompt = f"""
 You are a multilingual assistant answering questions using the document snippets below. Each snippet is labeled with a document ID and page number.
 
-Document Type: Invoices 
+Document Type: Invoices
 Snippets may include:
 - Invoice metadata (Invoice Number, Invoice Date, Due Date)
 - Buyer and seller information (Sold-To, Billed-To)

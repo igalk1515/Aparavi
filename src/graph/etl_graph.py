@@ -27,7 +27,6 @@ def extract_pages(state):
     extractor = PDFTextExtractor()
     pages, metadata = extractor.extract_text(path)
 
-    # Store OCR page info in state
     state["pages"] = pages
     state["metadata"] = metadata
     state["ocr_pages"] = extractor.ocr_pages
@@ -37,7 +36,6 @@ def extract_tables_and_store(state):
     path = state["file_path"]
     tables = extract_tables(path)
 
-    # Filter OCR pages (bad for Camelot)
     ocr_pages = state.get("ocr_pages", [])
     filtered_tables = [t for t in tables if t["page_num"] not in ocr_pages]
 
@@ -80,7 +78,7 @@ def chunk_and_store(state):
             chunks.append(chunk_obj)
 
     store_chunks(chunks)
-    store_content_chunks(chunks)  # after store_chunks()
+    store_content_chunks(chunks)
     print(f"\n✅ Stored {len(chunks)} chunks for {metadata.filename}")
     state["chunks"] = chunks
     return state

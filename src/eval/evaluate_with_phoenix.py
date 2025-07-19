@@ -33,10 +33,8 @@ for _, row in df.iterrows():
         "context": context,
     })
 
-# Create dataframe
 eval_df = pd.DataFrame(records)
 
-# Log to Arize Phoenix
 px.log(eval_df)
 
 print("✅ Evaluation data sent to Arize Phoenix.")

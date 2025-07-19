@@ -1,13 +1,28 @@
-"""
-RAG pipeline runner.
+# src/run_rag.py
 
-This script orchestrates the RAG (Retrieval Augmented Generation) process:
-1. Accept user queries
-2. Retrieve relevant information from vector and SQL stores
-3. Generate responses using LLMs with cited sources
-4. Evaluate performance
-"""
+from graph.rag_graph import build_rag_graph
+
+def main():
+    rag = build_rag_graph()
+
+    query = input("❓ Enter your question: ")
+    state = {
+        "query": query,
+        "language": "",
+        "retrieved_chunks": [],
+        "answer": ""
+    }
+
+    print("\n🚀 Running RAG pipeline...")
+    final = rag.invoke(state)
+
+    print("\n✅ Final Answer:")
+    print(final["answer"])
+
+    # print("\n📄 Supporting Chunks:")
+    # for chunk in final["retrieved_chunks"]:
+    #     print(f"- Doc: {chunk.doc_id}, Page: {chunk.page_num}, Lang: {chunk.language}")
+    #     print(f"  {chunk.content[:200]}...\n")
 
 if __name__ == "__main__":
-    # Placeholder for RAG pipeline execution
-    pass
+    main()
