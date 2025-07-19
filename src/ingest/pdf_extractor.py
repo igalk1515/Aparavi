@@ -1,13 +1,10 @@
 # src/ingest/pdf_extractor.py
-from models.data_models import DocumentMetadata
 import fitz
 import os
-from ingest.ocr_processor import run_ocr_with_google
 
-class PageText:
-    def __init__(self, page_num, content):
-        self.page_num = page_num
-        self.content = content
+from models.data_models import DocumentMetadata
+from ingest.ocr_processor import run_ocr_with_google
+from models.data_models import PageText
 
 class PDFTextExtractor:
     def __init__(self):
