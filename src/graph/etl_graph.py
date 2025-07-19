@@ -9,7 +9,7 @@ from store.vector_store import store_chunks
 from transform.text_chunker import chunk_text
 from transform.language_detector import detect_language
 from models.data_models import ContentChunk
-
+from store.sql_store import store_content_chunks  # at top
 
 from typing import TypedDict, List
 from models.data_models import ContentChunk, DocumentMetadata, PageText
@@ -80,6 +80,7 @@ def chunk_and_store(state):
             chunks.append(chunk_obj)
 
     store_chunks(chunks)
+    store_content_chunks(chunks)  # after store_chunks()
     print(f"\n✅ Stored {len(chunks)} chunks for {metadata.filename}")
     state["chunks"] = chunks
     return state

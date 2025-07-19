@@ -2,7 +2,9 @@
 import sqlite3
 import os
 import json
+
 from typing import List
+from models.data_models import ContentChunk
 
 DB_PATH = "data/sqlite/processed.db"
 
@@ -24,6 +26,45 @@ def create_tables():
             );
         """)
         conn.commit()
+
+def create_content_chunks_table():
+    with sqlite3.connect(DB_PATH) as conn:
+        cursor = conn.cursor()
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS content_chunks (
+                chunk_id TEXT PRIMARY KEY,
+                doc_id TEXT NOT NULL,
+                page_num INTEGER,
+                content TEXT,
+                language TEXT,
+                content_type TEXT,
+                metadata TEXT
+            );
+        """)
+        conn.commit()
+
+
+def store_content_chunks(chunks: List[ContentChunk]):
+    create_content_chunks_table()
+
+    with sqlite3.connect(DB_PATH) as conn:
+        cursor = conn.cursor()
+        for chunk in chunks:
+            cursor.execute("""
+                INSERT OR REPLACE INTO content_chunks (
+                    chunk_id, doc_id, page_num, content, language, content_type, metadata
+                ) VALUES (?, ?, ?, ?, ?, ?, ?);
+            """, (
+                chunk.chunk_id,
+                chunk.doc_id,
+                chunk.page_num,
+                chunk.content,
+                chunk.language,
+                chunk.content_type,
+                json.dumps(chunk.metadata or {}, ensure_ascii=False)
+            ))
+        conn.commit()
+
 
 def store_table_rows(rows: List[dict]):
     """
