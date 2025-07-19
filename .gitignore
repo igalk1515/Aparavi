@@ -67,9 +67,9 @@ qdrant_data/
 # Phoenix evaluation data
 phoenix_data/
 
-# PDFs and document files (optionally exclude sample files)
-# data/
-# *.pdf
+# PDFs and document files
+data/*
+*.pdf
 
 # Output files
 output/
