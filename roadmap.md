@@ -33,7 +33,7 @@ Perfect — here's a clear **ETL-to-RAG roadmap** for implementing your full Hyb
 
 | Step | Component             | File                    | Status     | Purpose                                      |
 | ---- | --------------------- | ----------------------- | ---------- | -------------------------------------------- |
-| 10   | Vector Retrieval      | `vector_retriever.py`   | 🔜 Planned | Fetch top-k chunks from Qdrant               |
+| 10   | Vector Retrieval      | `vector_retriever.py`   | ✅ Done    | Fetch top-k chunks from Qdrant               |
 | 11   | SQL Table Retrieval   | `sql_retriever.py`      | 🔜 Planned | Fetch relevant rows from structured data     |
 | 12   | Hybrid Retriever      | `hybrid_retriever.py`   | 🔜 Planned | Combine vector + SQL retrieval               |
 | 13   | GPT Answer Generation | `response_generator.py` | 🔜 Planned | Generate final response with source citation |
